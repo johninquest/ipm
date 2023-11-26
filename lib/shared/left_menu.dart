@@ -50,7 +50,7 @@ class _LeftMenuState extends State<LeftMenu> {
             ),
             ListTile(
               leading: const Icon(
-                Icons.list,
+                Icons.list_alt,
                 color: primaryColor,
               ),
               title: const Text('Policies'),

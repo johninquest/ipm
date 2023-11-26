@@ -5,7 +5,6 @@ import '../../pages/policies/list.dart';
 import '../../pages/home.dart';
 import '../../pages/info.dart';
 import '../../pages/user/user.dart';
-import '../../pages/networth/overview.dart';
 import '../../pages/auth.dart';
 /* import '../../pages/home.dart'; */
 import '../../style/colors.dart';
@@ -49,10 +48,6 @@ class MyApp extends StatelessWidget {
     GoRoute(
       path: '/user',
       builder: (context, state) => const UserPage(),
-    ),
-    GoRoute(
-      path: '/networth',
-      builder: (context, state) => const NetworthOverviewPage(),
     ),
     GoRoute(
       path: '/policies',

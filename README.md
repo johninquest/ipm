@@ -1,7 +1,8 @@
-<h3 align="center">tepr<h3>
+<h3 align="center">InsureMate<h3>
 
-<p align="center">A new multiplatform test project based on Flutter.</p>
+<p align="center">A simple app to help you keep track of your insurance policies.</p>
 
+<!--
 ## Getting Started
 
 This project is a starting point for a Flutter application.
@@ -17,3 +18,4 @@ For help getting started with Flutter development, view the
 samples, guidance on mobile development, and a full API reference.
 
 ## Other notes
+-->
