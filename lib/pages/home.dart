@@ -16,7 +16,7 @@ class HomePage extends StatelessWidget {
         iconTheme: const IconThemeData(color: textWhiteColor),
         backgroundColor: primaryColor,
         title: const Text(
-          'tepr',
+          'InsureMate',
           style: TextStyle(color: textWhiteColor, letterSpacing: 1.0),
         ),
         centerTitle: true,
@@ -43,7 +43,7 @@ class HomePage extends StatelessWidget {
         const SizedBox(
           height: 13.0,
         ), */
-        Text(dtHelper.localDateTimeNow()),
+        Text(dtHelper.deTimestamp()),
         const SizedBox(
           height: 13.0,
         ),

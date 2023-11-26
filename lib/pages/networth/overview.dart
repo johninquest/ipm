@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:tepr/style/colors.dart';
 
 class NetworthOverviewPage extends StatelessWidget {
   const NetworthOverviewPage({super.key});
@@ -12,7 +11,7 @@ class NetworthOverviewPage extends StatelessWidget {
         title: const Text('Net worth'),
         centerTitle: true,
       ),
-      body: Center(
+      body: const Center(
         child: nwText,
       ),
     );

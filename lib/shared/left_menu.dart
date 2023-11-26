@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-// import '../../pages/info.dart';
 import '../style/colors.dart';
-// import '../utils/router.dart';
 import 'dart:developer';
 
 class LeftMenu extends StatefulWidget {
-  const LeftMenu({Key? key}) : super(key: key);
+  const LeftMenu({super.key});
 
   @override
   State<LeftMenu> createState() => _LeftMenuState();
@@ -52,16 +50,16 @@ class _LeftMenuState extends State<LeftMenu> {
             ),
             ListTile(
               leading: const Icon(
-                Icons.manage_accounts,
+                Icons.list,
                 color: primaryColor,
               ),
-              title: const Text('Assets'),
-              onTap: () => log('Tapped 2'),
+              title: const Text('Policies'),
+              onTap: () => context.push('/policies'),
             ),
             /*  const SizedBox(
               height: 25.0,
             ), */
-            ListTile(
+/*             ListTile(
               leading: const Icon(
                 Icons.build,
                 color: primaryColor,
@@ -80,7 +78,7 @@ class _LeftMenuState extends State<LeftMenu> {
                 'Net worth',
               ),
               onTap: () => context.push('/networth'),
-            ),
+            ), */
             ListTile(
               leading: const Icon(
                 Icons.info,

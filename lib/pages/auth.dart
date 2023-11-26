@@ -13,7 +13,7 @@ class AuthPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          'tepr',
+          'InsureMate',
           style: TextStyle(color: primaryColor),
         ),
         centerTitle: true,
@@ -26,7 +26,7 @@ class AuthPage extends StatelessWidget {
           children: [
             Container(
                 margin: const EdgeInsets.only(bottom: 13.0),
-                child: const Text('🚀 DO IT NOW 🚀',
+                child: const Text('🚀 Do. It. Now 🚀',
                     style: TextStyle(fontWeight: FontWeight.bold))),
             const SizedBox(
               height: 13.0,

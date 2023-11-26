@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
+import '../../pages/policies/list.dart';
 import '../../pages/home.dart';
 import '../../pages/info.dart';
 import '../../pages/user/user.dart';
@@ -27,7 +28,7 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(seedColor: primaryColor),
           useMaterial3: true,
           /*  fontFamily: GoogleFonts.quicksand().fontFamily, */
-          textTheme: GoogleFonts.robotoMonoTextTheme(),
+          textTheme: GoogleFonts.montserratTextTheme(),
           // home: const AuthPage(),
         ));
   }
@@ -52,6 +53,10 @@ class MyApp extends StatelessWidget {
     GoRoute(
       path: '/networth',
       builder: (context, state) => const NetworthOverviewPage(),
+    ),
+    GoRoute(
+      path: '/policies',
+      builder: (context, state) => const PoliciesPage(),
     ),
   ]);
 }
