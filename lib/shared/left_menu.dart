@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import '../style/colors.dart';
-import 'dart:developer';
 
 class LeftMenu extends StatefulWidget {
   const LeftMenu({super.key});

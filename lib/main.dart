@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
+import '../../pages/user/create.dart';
 import '../../pages/policies/list.dart';
 import '../../pages/home.dart';
 import '../../pages/info.dart';
@@ -44,6 +45,10 @@ class MyApp extends StatelessWidget {
     GoRoute(
       path: '/info',
       builder: (context, state) => const AppInfoPage(),
+    ),
+    GoRoute(
+      path: '/user-create',
+      builder: (context, state) => const CreateUserPage(),
     ),
     GoRoute(
       path: '/user',

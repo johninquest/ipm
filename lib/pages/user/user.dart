@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../style/colors.dart';
+import 'package:go_router/go_router.dart';
+import 'dart:developer';
 
 class UserPage extends StatelessWidget {
   const UserPage({super.key});
@@ -12,7 +14,13 @@ class UserPage extends StatelessWidget {
         centerTitle: true,
       ),
       body: const Center(
-        child: UserInformation(),
+        // child: UserInformation(),
+        child: CreateNewUserButton(),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () => log('Tapped add button'),
+        tooltip: 'Add',
+        child: const Icon(Icons.add),
       ),
     );
   }
@@ -36,7 +44,6 @@ class UserInfoRow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
-      // crossAxisAlignment: CrossAxisAlignment.center,
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Container(
@@ -52,5 +59,18 @@ class UserInfoRow extends StatelessWidget {
         )
       ],
     );
+  }
+}
+
+class CreateNewUserButton extends StatelessWidget {
+  const CreateNewUserButton({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton(
+        onPressed: () => context.push('/user-create'),
+        child: const Icon(
+          Icons.add,
+        ));
   }
 }
