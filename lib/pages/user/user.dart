@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../style/colors.dart';
 import 'package:go_router/go_router.dart';
-import 'dart:developer';
 
 class UserPage extends StatelessWidget {
   const UserPage({super.key});
@@ -17,11 +16,11 @@ class UserPage extends StatelessWidget {
         // child: UserInformation(),
         child: CreateNewUserButton(),
       ),
-      floatingActionButton: FloatingActionButton(
+/*       floatingActionButton: FloatingActionButton(
         onPressed: () => log('Tapped add button'),
         tooltip: 'Add',
         child: const Icon(Icons.add),
-      ),
+      ), */
     );
   }
 }
