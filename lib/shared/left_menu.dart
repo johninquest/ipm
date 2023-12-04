@@ -38,6 +38,25 @@ class _LeftMenuState extends State<LeftMenu> {
                 )),
             ListTile(
               leading: const Icon(
+                Icons.list_alt,
+                color: primaryColor,
+              ),
+              title: const Text('Policies'),
+              onTap: () => context.push('/policies-list'),
+            ),
+            ListTile(
+              leading: const Icon(
+                Icons.request_page,
+                color: primaryColor,
+              ),
+              title: const Text(
+                'Claims',
+              ),
+              /* onTap: () => PageRouter().navigateToPage(const SchoolInfoPage(), context) */
+              onTap: () => context.push('/claims-list'),
+            ),
+            ListTile(
+              leading: const Icon(
                 Icons.person,
                 color: primaryColor,
               ),
@@ -47,37 +66,6 @@ class _LeftMenuState extends State<LeftMenu> {
               /* onTap: () => PageRouter().navigateToPage(const SchoolInfoPage(), context) */
               onTap: () => context.push('/user'),
             ),
-            ListTile(
-              leading: const Icon(
-                Icons.list_alt,
-                color: primaryColor,
-              ),
-              title: const Text('Policies'),
-              onTap: () => context.push('/policies'),
-            ),
-            /*  const SizedBox(
-              height: 25.0,
-            ), */
-/*             ListTile(
-              leading: const Icon(
-                Icons.build,
-                color: primaryColor,
-              ),
-              title: const Text(
-                'Liabilities',
-              ),
-              onTap: () => log('Tapped 3'),
-            ),
-            ListTile(
-              leading: const Icon(
-                Icons.account_balance_wallet,
-                color: primaryColor,
-              ),
-              title: const Text(
-                'Net worth',
-              ),
-              onTap: () => context.push('/networth'),
-            ), */
             ListTile(
               leading: const Icon(
                 Icons.info,

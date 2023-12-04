@@ -3,7 +3,7 @@ import '../../utils/version_info.dart';
 // import '../style/colors.dart';
 
 class AppInfoPage extends StatelessWidget {
-  const AppInfoPage({Key? key}) : super(key: key);
+  const AppInfoPage({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -3,7 +3,6 @@ import 'package:go_router/go_router.dart';
 import '../../shared/left_menu.dart';
 import '../../utils/date_time_helper.dart';
 import '../style/colors.dart';
-import 'dart:developer';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -52,18 +51,14 @@ class HomePage extends StatelessWidget {
           onPressed: () {},
           child: const Text('TAP ME'),
         ),
-        /* const SizedBox(
-          height: 13.0,
-        ),
-        const VersionInfo(), */
       ])),
       /* bottomNavigationBar: const BottomNavBar(), */
       drawer: const LeftMenu(),
-      floatingActionButton: FloatingActionButton(
+/*       floatingActionButton: FloatingActionButton(
         onPressed: () => log('Tapped add button'),
         tooltip: 'Add',
         child: const Icon(Icons.add),
-      ),
+      ), */
     );
   }
 }

@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
+import '../../pages/claims/claims_list.dart';
 import '../../pages/user/create.dart';
-import '../../pages/policies/list.dart';
+import 'pages/policies/policies_list.dart';
 import '../../pages/home.dart';
 import '../../pages/info.dart';
 import '../../pages/user/user.dart';
 import '../../pages/auth.dart';
-/* import '../../pages/home.dart'; */
 import '../../style/colors.dart';
 
 void main() {
@@ -55,8 +55,12 @@ class MyApp extends StatelessWidget {
       builder: (context, state) => const UserPage(),
     ),
     GoRoute(
-      path: '/policies',
+      path: '/policies-list',
       builder: (context, state) => const PoliciesPage(),
+    ),
+    GoRoute(
+      path: '/claims-list',
+      builder: (context, state) => const ClaimsListPage(),
     ),
   ]);
 }
