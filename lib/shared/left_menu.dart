@@ -38,15 +38,7 @@ class _LeftMenuState extends State<LeftMenu> {
                 )),
             ListTile(
               leading: const Icon(
-                Icons.list_alt,
-                color: primaryColor,
-              ),
-              title: const Text('Policies'),
-              onTap: () => context.push('/policies-list'),
-            ),
-            ListTile(
-              leading: const Icon(
-                Icons.request_page,
+                Icons.request_page_outlined,
                 color: primaryColor,
               ),
               title: const Text(
@@ -57,7 +49,15 @@ class _LeftMenuState extends State<LeftMenu> {
             ),
             ListTile(
               leading: const Icon(
-                Icons.person,
+                Icons.list_alt,
+                color: primaryColor,
+              ),
+              title: const Text('Contracts'),
+              onTap: () => context.push('/policies-list'),
+            ),
+            ListTile(
+              leading: const Icon(
+                Icons.person_outline,
                 color: primaryColor,
               ),
               title: const Text(
@@ -68,7 +68,7 @@ class _LeftMenuState extends State<LeftMenu> {
             ),
             ListTile(
               leading: const Icon(
-                Icons.info,
+                Icons.info_outline,
                 color: primaryColor,
               ),
               title: const Text(

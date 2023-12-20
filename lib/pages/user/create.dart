@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import '../../shared/lists.dart';
+import '../../utils/custom_extensions.dart';
+import '../../utils/date_time_helper.dart';
 import 'dart:developer';
 
 class CreateUserPage extends StatelessWidget {
@@ -43,15 +46,41 @@ class MyForm extends StatefulWidget {
 
 class _MyFormState extends State<MyForm> {
   final _userFormKey = GlobalKey<FormState>();
-  final TextEditingController _salutationController = TextEditingController();
+/*   final TextEditingController _salutationController = TextEditingController(); */
+  String? _salutation;
   final TextEditingController _firstNameController = TextEditingController();
   final TextEditingController _lastNameController = TextEditingController();
-  final TextEditingController _dateOfBirthController = TextEditingController();
+  final TextEditingController _dateOfBirth = TextEditingController();
   final TextEditingController _phoneNumberController = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
 
+  DateTime selectedDate = DateTime.now();
+  Future<void> _selectDate(BuildContext context) async {
+    final DateTime? picked = await showDatePicker(
+        context: context,
+        initialDate: selectedDate,
+        firstDate: DateTime(1990, 1),
+        lastDate: DateTime(2101));
+    if (picked != null && picked != selectedDate) {
+      setState(() {
+        selectedDate = picked;
+        // _pickedDate.text = DateTimeFormatter().toDateString(picked);
+        log('${picked.runtimeType}');
+        _dateOfBirth.text = DateTimeHelper().toDeDateFormat('$picked');
+      });
+    }
+  }
+
+  @override
+  void initState() {
+    DateTime now = DateTime.now();
+    _dateOfBirth.text = DateTimeHelper().toDeDateFormat('$now');
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
+    final salutations = salutationOptions;
     return Form(
       key: _userFormKey,
       child: Container(
@@ -60,13 +89,18 @@ class _MyFormState extends State<MyForm> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            TextFormField(
-              controller: _salutationController,
-              decoration: const InputDecoration(
-                /* icon: Icon(Icons.person), */
-                hintText: '',
-                labelText: 'Salutation',
-              ),
+            DropdownButtonFormField(
+              decoration: const InputDecoration(labelText: 'Salutation'),
+              items: salutations.map((String value) {
+                return DropdownMenuItem<String>(
+                  value: value,
+                  child: Text(value.toCapitalized()),
+                );
+              }).toList(),
+              /* validator: (val) => val == null ? 'Tätigkeit eingeben' : null, */
+              onChanged: (val) => setState(() {
+                _salutation = val as String;
+              }),
             ),
             TextFormField(
               controller: _firstNameController,
@@ -100,13 +134,14 @@ class _MyFormState extends State<MyForm> {
             ),
             //  const SizedBox(height: 16),
             TextFormField(
-              controller: _dateOfBirthController,
+              controller: _dateOfBirth,
               decoration: const InputDecoration(
                 /* icon: Icon(Icons.calendar_today), */
                 hintText: '',
                 labelText: 'Date of Birth',
               ),
               keyboardType: TextInputType.datetime,
+              onTap: () => _selectDate(context),
               validator: (value) {
                 if (value == null || value.isEmpty) {
                   return 'Please enter date of birth';
@@ -157,15 +192,15 @@ class _MyFormState extends State<MyForm> {
                   ElevatedButton(
                     onPressed: () {
                       if (_userFormKey.currentState!.validate()) {
-                        final salutation = _salutationController.text;
+                        // final salutation = _salutationController.text;
                         final firstName = _firstNameController.text;
                         final lastName = _lastNameController.text;
-                        final dateOfBirth = _dateOfBirthController.text;
+                        final dateOfBirth = _dateOfBirth.text;
                         final phoneNumber = _phoneNumberController.text;
                         final email = _emailController.text;
 
                         // Process the form data here
-                        log('Salutation: $salutation');
+                        // log('Salutation: $salutation');
                         log('First name: $firstName');
                         log('Last name: $lastName');
                         log('Date of Birth: $dateOfBirth');
