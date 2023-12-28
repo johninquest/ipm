@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'dart:developer';
 
 class ClaimsListPage extends StatelessWidget {
@@ -8,14 +9,14 @@ class ClaimsListPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Claims list'),
+        title: const Text('Claims'),
         centerTitle: true,
       ),
       body: const Center(
         child: Text('List of claims'),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () => log('Tapped add new claim button'),
+        onPressed: () => context.push('/create-claim'),
         tooltip: 'Add',
         child: const Icon(Icons.add),
       ),

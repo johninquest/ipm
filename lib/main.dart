@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
-import '../../pages/claims/claims_list.dart';
-import '../../pages/user/create.dart';
+import 'pages/claims/claim-create.dart';
+import 'pages/claims/claims-list.dart';
+import 'pages/contracts/list_of_contracts.dart';
+import 'pages/contracts/create_contract.dart';
+import 'pages/user/create_user.dart';
 import 'pages/policies/policies_list.dart';
 import '../../pages/home.dart';
 import '../../pages/info.dart';
@@ -60,8 +63,20 @@ class MyApp extends StatelessWidget {
       builder: (context, state) => const PoliciesPage(),
     ),
     GoRoute(
+      path: '/contracts-list',
+      builder: (context, state) => const ListOfContractsPage(),
+    ),
+    GoRoute(
+      path: '/create-contract',
+      builder: (context, state) => const CreateContractPage(),
+    ),
+    GoRoute(
       path: '/claims-list',
       builder: (context, state) => const ClaimsListPage(),
+    ),
+    GoRoute(
+      path: '/create-claim',
+      builder: (context, state) => const ClaimCreatePage(),
     ),
   ]);
 }
