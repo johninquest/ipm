@@ -73,8 +73,9 @@ class _MyFormState extends State<MyForm> {
 
   @override
   void initState() {
-    DateTime now = DateTime.now();
-    _dateOfBirth.text = DateTimeHelper().toDeDateFormat('$now');
+    // DateTime now = DateTime.now();
+    // _dateOfBirth.text = DateTimeHelper().toDeDateFormat('$now');
+    _dateOfBirth.text = '--.--.----';
     super.initState();
   }
 

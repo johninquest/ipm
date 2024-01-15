@@ -3,13 +3,13 @@ import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'pages/claims/claim-create.dart';
 import 'pages/claims/claims-list.dart';
-import 'pages/contracts/list_of_contracts.dart';
-import 'pages/contracts/create_contract.dart';
+import 'pages/contracts/contracts_list.dart';
+import 'pages/contracts/contract_create.dart';
 import 'pages/user/create_user.dart';
-import 'pages/policies/policies_list.dart';
+// import 'pages/policies/policies_list.dart';
 import '../../pages/home.dart';
 import '../../pages/info.dart';
-import '../../pages/user/user.dart';
+import 'pages/user/user-details.dart';
 import '../../pages/auth.dart';
 import '../../style/colors.dart';
 
@@ -58,16 +58,16 @@ class MyApp extends StatelessWidget {
       path: '/user',
       builder: (context, state) => const UserPage(),
     ),
-    GoRoute(
+/*     GoRoute(
       path: '/policies-list',
       builder: (context, state) => const PoliciesPage(),
-    ),
+    ), */
     GoRoute(
       path: '/contracts-list',
       builder: (context, state) => const ListOfContractsPage(),
     ),
     GoRoute(
-      path: '/create-contract',
+      path: '/contract-create',
       builder: (context, state) => const CreateContractPage(),
     ),
     GoRoute(

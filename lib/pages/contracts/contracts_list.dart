@@ -14,7 +14,7 @@ class ListOfContractsPage extends StatelessWidget {
       ),
       body: const Center(child: Text('List of insurance contracts')),
       floatingActionButton: FloatingActionButton(
-        onPressed: () => context.push('/create-contract'),
+        onPressed: () => context.push('/contract-create'),
         tooltip: 'Add',
         child: const Icon(Icons.add),
       ),

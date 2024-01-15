@@ -35,6 +35,7 @@ class AuthPage extends StatelessWidget {
               onPressed: () => log('Tapped google button'),
               child: const Text(
                 'Continue with Google',
+                style: TextStyle(color: primaryColor),
               ),
             ),
             const SizedBox(
@@ -42,7 +43,8 @@ class AuthPage extends StatelessWidget {
             ),
             ElevatedButton(
               onPressed: () => context.go('/home'),
-              child: const Icon(Icons.home),
+              // child: const Icon(Icons.home),
+              child: const Text('Home', style: TextStyle(color: primaryColor)),
             )
           ],
         ),
