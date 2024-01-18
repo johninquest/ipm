@@ -16,7 +16,7 @@ class HomePage extends StatelessWidget {
         iconTheme: const IconThemeData(color: textWhiteColor),
         backgroundColor: primaryColor,
         title: const Text(
-          'InsureMate',
+          '',
           style: TextStyle(color: textWhiteColor, letterSpacing: 1.0),
         ),
         centerTitle: true,

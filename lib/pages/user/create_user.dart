@@ -113,7 +113,7 @@ class _MyFormState extends State<MyForm> {
               keyboardType: TextInputType.text,
               validator: (value) {
                 if (value == null || value.isEmpty) {
-                  return 'Please enter first name';
+                  return 'First name ?';
                 }
                 return null;
               },
@@ -128,7 +128,7 @@ class _MyFormState extends State<MyForm> {
               keyboardType: TextInputType.text,
               validator: (value) {
                 if (value == null || value.isEmpty) {
-                  return 'Please enter last name';
+                  return 'Last name ?';
                 }
                 return null;
               },
@@ -145,7 +145,7 @@ class _MyFormState extends State<MyForm> {
               onTap: () => _selectDate(context),
               validator: (value) {
                 if (value == null || value.isEmpty) {
-                  return 'Please enter date of birth';
+                  return 'Date of birth ?';
                 }
                 return null;
               },
@@ -160,7 +160,7 @@ class _MyFormState extends State<MyForm> {
               keyboardType: TextInputType.phone,
               validator: (value) {
                 if (value == null || value.isEmpty) {
-                  return 'Please enter phone number';
+                  return 'Phone number ?';
                 }
                 return null;
               },
@@ -175,7 +175,7 @@ class _MyFormState extends State<MyForm> {
               keyboardType: TextInputType.emailAddress,
               validator: (value) {
                 if (value == null || value.isEmpty) {
-                  return 'Please enter e-mail';
+                  return 'E-mail ?';
                 }
                 return null;
               },
@@ -188,7 +188,7 @@ class _MyFormState extends State<MyForm> {
                   ElevatedButton(
                     onPressed: () => GoRouter.of(context).pop(),
                     style: ElevatedButton.styleFrom(),
-                    child: const Text('Back'),
+                    child: Text('back'.toUpperCase()),
                   ),
                   ElevatedButton(
                     onPressed: () {
@@ -209,7 +209,7 @@ class _MyFormState extends State<MyForm> {
                         log('E-mail: $email');
                       }
                     },
-                    child: const Text('Submit'),
+                    child: Text('submit'.toUpperCase()),
                   ),
                 ],
               ),
