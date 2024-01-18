@@ -6,7 +6,6 @@ import 'pages/claims/claims-list.dart';
 import 'pages/contracts/contracts_list.dart';
 import 'pages/contracts/contract_create.dart';
 import 'pages/user/create_user.dart';
-// import 'pages/policies/policies_list.dart';
 import '../../pages/home.dart';
 import '../../pages/info.dart';
 import 'pages/user/user-details.dart';
@@ -26,14 +25,13 @@ class MyApp extends StatelessWidget {
     return MaterialApp.router(
         routerConfig: _router,
         debugShowCheckedModeBanner: false,
-        /* title: 'Flutter Demo', */
         theme: ThemeData(
           colorScheme: ColorScheme.fromSeed(
               seedColor: primaryColor, secondary: textBlackColor),
           useMaterial3: true,
           /*  fontFamily: GoogleFonts.quicksand().fontFamily, */
           textTheme: GoogleFonts.montserratTextTheme(),
-          // home: const AuthPage(),
+          /* home: const AuthPage(), */
         ));
   }
 
@@ -58,10 +56,6 @@ class MyApp extends StatelessWidget {
       path: '/user',
       builder: (context, state) => const UserPage(),
     ),
-/*     GoRoute(
-      path: '/policies-list',
-      builder: (context, state) => const PoliciesPage(),
-    ), */
     GoRoute(
       path: '/contracts-list',
       builder: (context, state) => const ListOfContractsPage(),

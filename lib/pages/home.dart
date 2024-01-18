@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
+// import 'package:go_router/go_router.dart';
 import '../../shared/left_menu.dart';
 import '../../utils/date_time_helper.dart';
+import '../shared/custom_dailogs.dart';
 import '../style/colors.dart';
 
 class HomePage extends StatelessWidget {
@@ -20,19 +21,19 @@ class HomePage extends StatelessWidget {
         ),
         centerTitle: true,
         actions: [
-          /* IconButton(
+          IconButton(
             onPressed: () => showDialog(
                 context: context,
                 builder: (_) => const LogoutDialog(),
                 barrierDismissible: true),
             icon: const Icon(Icons.logout_outlined),
             tooltip: 'Log out',
-          ) */
-          IconButton(
+          )
+          /*  IconButton(
             onPressed: () => context.push('/auth'),
             icon: const Icon(Icons.logout_outlined),
             tooltip: 'Log out',
-          )
+          ) */
         ],
       ),
       /* drawer: const LeftMenu(), */
