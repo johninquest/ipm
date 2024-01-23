@@ -14,7 +14,8 @@ class AuthPage extends StatelessWidget {
       appBar: AppBar(
         title: const Text(
           'PolicyTrackr',
-          style: TextStyle(color: primaryColor),
+          style: TextStyle(
+              color: primaryColor, letterSpacing: 3.0, fontSize: 13.0),
         ),
         centerTitle: true,
         automaticallyImplyLeading: false,
@@ -27,17 +28,18 @@ class AuthPage extends StatelessWidget {
             Container(
                 margin: const EdgeInsets.only(bottom: 13.0),
                 child: const Text('🚀 Do. It. Now 🚀',
-                    style: TextStyle(fontWeight: FontWeight.bold))),
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold, wordSpacing: 3.0))),
             const SizedBox(
               height: 13.0,
             ),
-            ElevatedButton(
+            /* ElevatedButton(
               onPressed: () => log('Tapped google button'),
               child: const Text(
                 'Continue with Google',
                 style: TextStyle(color: primaryColor),
               ),
-            ),
+            ), */
             const SizedBox(
               height: 13.0,
             ),
