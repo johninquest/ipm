@@ -13,11 +13,11 @@ class HomePage extends StatelessWidget {
     final dtHelper = DateTimeHelper();
     return Scaffold(
       appBar: AppBar(
-        iconTheme: const IconThemeData(color: textWhiteColor),
+        iconTheme: const IconThemeData(color: txtWhiteColor),
         backgroundColor: primaryColor,
         title: const Text(
           '',
-          style: TextStyle(color: textWhiteColor, letterSpacing: 1.0),
+          style: TextStyle(color: txtWhiteColor, letterSpacing: 1.0),
         ),
         centerTitle: true,
         actions: [

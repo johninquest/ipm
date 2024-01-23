@@ -27,7 +27,7 @@ class LogoutDialog extends StatelessWidget {
               child: const Text(
                 'NO',
                 style: TextStyle(
-                    color: textBlackColor, fontWeight: FontWeight.bold),
+                    color: txtBlackColor, fontWeight: FontWeight.bold),
               ),
             ),
             TextButton(
