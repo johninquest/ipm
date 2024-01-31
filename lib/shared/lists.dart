@@ -1,3 +1,4 @@
+List<String> userType = ['person', 'business'];
 List<String> salutationOptions = ['mr.', 'ms.', 'mrs.', 'dr.', 'prof.'];
 List<String> insuranceProductsPersonal = [
   'accident',
