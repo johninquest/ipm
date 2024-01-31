@@ -49,7 +49,7 @@ class HomePage extends StatelessWidget {
         ),
         ElevatedButton(
           style: ElevatedButton.styleFrom(),
-          onPressed: () {},
+          onPressed: () => debugPrint('Tapped TAP ME button'),
           child: const Text('TAP ME'),
         ),
       ])),
