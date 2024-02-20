@@ -1,0 +1,9 @@
+{
+    "user": "Benutzer", 
+    "contracts": "Verträge",
+    "claims": "Schäden",
+    "home_content": "Hausratversicherung",
+    "private_liability": "Haftpflichtversicherung",
+    "travel":"Reiseversicherung", 
+    "vehicle": "Autoversicherung"
+}

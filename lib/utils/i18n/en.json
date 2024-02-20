@@ -1,0 +1,11 @@
+{
+    "user": "User", 
+    "contracts": "Contracts",
+    "new_contract": "New contract",
+    "claims": "Claims", 
+    "new_claim": "New claim",
+    "home_content": "Home content insurance",
+    "private_liability": "Private liability insurance",
+    "travel": "Travel insurance", 
+    "vehicle": "Car insurance"
+}
