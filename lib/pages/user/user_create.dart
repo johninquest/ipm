@@ -5,8 +5,8 @@ import '../../utils/custom_extensions.dart';
 import '../../utils/date_time_helper.dart';
 import 'dart:developer';
 
-class CreateUserPage extends StatelessWidget {
-  const CreateUserPage({super.key});
+class UserCreatePage extends StatelessWidget {
+  const UserCreatePage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +17,7 @@ class CreateUserPage extends StatelessWidget {
       ),
       body: const Center(
         // child: Text('New user form'),
-        child: MyForm(),
+        child: UserForm(),
       ),
     );
   }
@@ -31,20 +31,6 @@ class UserForm extends StatefulWidget {
 }
 
 class _UserFormState extends State<UserForm> {
-  @override
-  Widget build(BuildContext context) {
-    return const Placeholder();
-  }
-}
-
-class MyForm extends StatefulWidget {
-  const MyForm({super.key});
-
-  @override
-  State<MyForm> createState() => _MyFormState();
-}
-
-class _MyFormState extends State<MyForm> {
   final _userFormKey = GlobalKey<FormState>();
 /*   final TextEditingController _salutationController = TextEditingController(); */
   String? _salutation;

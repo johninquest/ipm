@@ -5,10 +5,10 @@ import 'pages/claims/claim-create.dart';
 import 'pages/claims/claims-list.dart';
 import 'pages/contracts/contracts_list.dart';
 import 'pages/contracts/contract_create.dart';
-import 'pages/user/create_user.dart';
+import 'pages/user/user_create.dart';
 import '../../pages/home.dart';
 import '../../pages/info.dart';
-import 'pages/user/user-details.dart';
+import 'pages/user/user_details.dart';
 import '../../pages/auth.dart';
 import '../../style/colors.dart';
 
@@ -50,11 +50,11 @@ class MyApp extends StatelessWidget {
     ),
     GoRoute(
       path: '/user-create',
-      builder: (context, state) => const CreateUserPage(),
+      builder: (context, state) => const UserCreatePage(),
     ),
     GoRoute(
       path: '/user',
-      builder: (context, state) => const UserPage(),
+      builder: (context, state) => const UserDetailsPage(),
     ),
     GoRoute(
       path: '/contracts-list',

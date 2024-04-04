@@ -39,27 +39,37 @@ class HomePage extends StatelessWidget {
       /* drawer: const LeftMenu(), */
       body: Center(
           child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-        /* const Text('🚀 A new app is being born here 🚀'),
-        const SizedBox(
-          height: 13.0,
+        /*  ElevatedButton(
+          style: ElevatedButton.styleFrom(),
+          onPressed: () => debugPrint('Tapped TAP ME button'),
+          child: const Text('TAP ME'),
         ), */
-        Text(dtHelper.deTimestamp()),
+        ElevatedButton(
+          style: ElevatedButton.styleFrom(),
+          onPressed: () => debugPrint('Tapped CLAIMS LIST button'),
+          child: const Text('CLAIMS LIST'),
+        ),
         const SizedBox(
           height: 13.0,
         ),
         ElevatedButton(
           style: ElevatedButton.styleFrom(),
-          onPressed: () => debugPrint('Tapped TAP ME button'),
-          child: const Text('TAP ME'),
+          onPressed: () => debugPrint('Tapped POLICY LIST button'),
+          child: const Text(
+            'POLICY LIST',
+          ),
+        ),
+        const SizedBox(
+          height: 13.0,
+        ),
+        ElevatedButton(
+          style: ElevatedButton.styleFrom(),
+          onPressed: () => debugPrint('Tapped NEW button'),
+          child: const Text('NEW'),
         ),
       ])),
       /* bottomNavigationBar: const BottomNavBar(), */
       drawer: const LeftMenu(),
-/*       floatingActionButton: FloatingActionButton(
-        onPressed: () => log('Tapped add button'),
-        tooltip: 'Add',
-        child: const Icon(Icons.add),
-      ), */
     );
   }
 }

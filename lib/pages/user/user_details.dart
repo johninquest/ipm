@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import '../../style/colors.dart';
 import 'package:go_router/go_router.dart';
 
-class UserPage extends StatelessWidget {
-  const UserPage({super.key});
+class UserDetailsPage extends StatelessWidget {
+  const UserDetailsPage({super.key});
 
   @override
   Widget build(BuildContext context) {
