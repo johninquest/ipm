@@ -48,11 +48,12 @@ class _MyFormState extends State<MyForm> {
   final _userFormKey = GlobalKey<FormState>();
 /*   final TextEditingController _salutationController = TextEditingController(); */
   String? _salutation;
-  final TextEditingController _firstNameController = TextEditingController();
-  final TextEditingController _lastNameController = TextEditingController();
+  final TextEditingController _firstName = TextEditingController();
+  final TextEditingController _lastName = TextEditingController();
   final TextEditingController _dateOfBirth = TextEditingController();
-  final TextEditingController _phoneNumberController = TextEditingController();
-  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _address = TextEditingController();
+  final TextEditingController _phoneNumber = TextEditingController();
+  final TextEditingController _email = TextEditingController();
 
   DateTime selectedDate = DateTime.now();
   Future<void> _selectDate(BuildContext context) async {
@@ -104,7 +105,7 @@ class _MyFormState extends State<MyForm> {
               }),
             ),
             TextFormField(
-              controller: _firstNameController,
+              controller: _firstName,
               decoration: const InputDecoration(
                 /* icon: Icon(Icons.person), */
                 hintText: '',
@@ -119,7 +120,7 @@ class _MyFormState extends State<MyForm> {
               },
             ),
             TextFormField(
-              controller: _lastNameController,
+              controller: _lastName,
               decoration: const InputDecoration(
                 /* icon: Icon(Icons.person), */
                 hintText: '',
@@ -151,7 +152,22 @@ class _MyFormState extends State<MyForm> {
               },
             ),
             TextFormField(
-              controller: _phoneNumberController,
+              controller: _address,
+              decoration: const InputDecoration(
+                /* icon: Icon(Icons.person), */
+                hintText: '',
+                labelText: 'Address',
+              ),
+              keyboardType: TextInputType.text,
+              validator: (value) {
+                if (value == null || value.isEmpty) {
+                  return 'Address ?';
+                }
+                return null;
+              },
+            ),
+            TextFormField(
+              controller: _phoneNumber,
               decoration: const InputDecoration(
                 /* icon: Icon(Icons.person), */
                 hintText: '',
@@ -166,7 +182,7 @@ class _MyFormState extends State<MyForm> {
               },
             ),
             TextFormField(
-              controller: _emailController,
+              controller: _email,
               decoration: const InputDecoration(
                 /* icon: Icon(Icons.person), */
                 hintText: '',
@@ -188,17 +204,17 @@ class _MyFormState extends State<MyForm> {
                   ElevatedButton(
                     onPressed: () => GoRouter.of(context).pop(),
                     style: ElevatedButton.styleFrom(),
-                    child: Text('back'.toUpperCase()),
+                    child: const Text('BACK'),
                   ),
                   ElevatedButton(
                     onPressed: () {
                       if (_userFormKey.currentState!.validate()) {
                         // final salutation = _salutationController.text;
-                        final firstName = _firstNameController.text;
-                        final lastName = _lastNameController.text;
+                        final firstName = _firstName.text;
+                        final lastName = _lastName.text;
                         final dateOfBirth = _dateOfBirth.text;
-                        final phoneNumber = _phoneNumberController.text;
-                        final email = _emailController.text;
+                        final phoneNumber = _phoneNumber.text;
+                        final email = _email.text;
 
                         // Process the form data here
                         // log('Salutation: $salutation');
@@ -209,7 +225,7 @@ class _MyFormState extends State<MyForm> {
                         log('E-mail: $email');
                       }
                     },
-                    child: Text('submit'.toUpperCase()),
+                    child: const Text('SAVE'),
                   ),
                 ],
               ),

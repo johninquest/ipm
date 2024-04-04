@@ -15,7 +15,10 @@ class AuthPage extends StatelessWidget {
         title: const Text(
           'PolicyTrackr',
           style: TextStyle(
-              color: primaryColor, letterSpacing: 3.0, fontSize: 13.0),
+              color: primaryColor,
+              letterSpacing: 3.0,
+              fontSize: 13.0,
+              fontWeight: FontWeight.bold),
         ),
         centerTitle: true,
         automaticallyImplyLeading: false,
@@ -27,9 +30,16 @@ class AuthPage extends StatelessWidget {
           children: [
             Container(
                 margin: const EdgeInsets.only(bottom: 13.0),
-                child: const Text('🚀 Do. It. Now 🚀',
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold, wordSpacing: 3.0))),
+                child: const Column(
+                  children: [
+                    Text('All Your Policies, One App',
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, wordSpacing: 3.0)),
+                    Text(
+                        'Manage all your insurance coverages in one secure & organized location',
+                        style: TextStyle(wordSpacing: 1.0)),
+                  ],
+                )),
             const SizedBox(
               height: 13.0,
             ),
@@ -46,7 +56,7 @@ class AuthPage extends StatelessWidget {
             ElevatedButton(
               onPressed: () => context.go('/home'),
               // child: const Icon(Icons.home),
-              child: const Text('Home', style: TextStyle(color: primaryColor)),
+              child: const Text('START', style: TextStyle(color: primaryColor)),
             )
           ],
         ),

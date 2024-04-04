@@ -3,20 +3,20 @@
 <p align="center">A simple app to help you keep track of your insurance policies.</p>
 
 <!--
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-- [Firebase setup for flutter](https://firebase.google.com/docs/flutter/setup?hl=en&platform=android)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
 
 ## Other notes 
+
+## 
+Names
+- InsurAlly 
+- CoverNest
+- InsurSafe 
+- PolicyKeeper
+
+## Catchphrases 
+- Simplify Your Insurance Life: Organize all your policies in one place. Get peace of mind knowing you're covered. 
+- All Your Policies, One App: From health to home, manage all your insurance coverage in one secure, organized location.
+
+## Competitors 
 - [Clark](https://www.spiegel.de/gutscheine/magazin/clark-versicherungsmanager) 
 -->
