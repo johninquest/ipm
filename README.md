@@ -11,7 +11,9 @@ Names
 - InsurAlly 
 - CoverNest
 - InsurSafe 
-- PolicyKeeper
+- PolicyKeeper 
+- CoverView 
+- Policy Pocket
 
 ## Catchphrases 
 - Simplify Your Insurance Life: Organize all your policies in one place. Get peace of mind knowing you're covered. 
@@ -19,4 +21,17 @@ Names
 
 ## Competitors 
 - [Clark](https://www.spiegel.de/gutscheine/magazin/clark-versicherungsmanager) 
+
+## Insurance products 
+- Health
+- Life 
+- Auto 
+- Homeowners
+- Home content
+- Renters 
+- Liability 
+- Fahrrad 
+- Travel 
+- Legal fees 
+- Accident
 -->
