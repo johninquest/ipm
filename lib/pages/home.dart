@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 // import 'package:go_router/go_router.dart';
 import '../../shared/left_menu.dart';
 import '../../utils/date_time_helper.dart';
@@ -46,7 +47,7 @@ class HomePage extends StatelessWidget {
         ), */
         ElevatedButton(
           style: ElevatedButton.styleFrom(),
-          onPressed: () => debugPrint('Tapped CLAIMS LIST button'),
+          onPressed: () => context.push('/claims-list'),
           child: const Text('CLAIMS LIST'),
         ),
         const SizedBox(
@@ -54,7 +55,7 @@ class HomePage extends StatelessWidget {
         ),
         ElevatedButton(
           style: ElevatedButton.styleFrom(),
-          onPressed: () => debugPrint('Tapped POLICY LIST button'),
+          onPressed: () => context.push('/contracts-list'),
           child: const Text(
             'POLICY LIST',
           ),

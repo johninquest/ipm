@@ -13,7 +13,7 @@ class AuthPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          'PolicyTrackr',
+          'PoliTkr',
           style: TextStyle(
               color: primaryColor,
               letterSpacing: 3.0,
