@@ -29,8 +29,8 @@ class _NewContractFormState extends State<NewContractForm> {
   final _productType = TextEditingController();
   final _validFromDate = TextEditingController();
   final _validToDate = TextEditingController();
-  bool? _automaticRenewal = false;
-  final List<String> _coveragesItems = [];
+  String? _automaticRenewal;
+  final List<String> _contractModules = [];
   final List<String> _options = ['no', 'yes'];
 /*   final TextEditingController _contractStartDate = TextEditingController();
   String? _contractType;
@@ -38,7 +38,7 @@ class _NewContractFormState extends State<NewContractForm> {
   bool? _contractExtendsAutomatically; */
   @override
   Widget build(BuildContext context) {
-    String _currentOption = _options[0];
+    // String _currentOption = _options[0];
     return Form(
       key: _newContractFormKey,
       child: SingleChildScrollView(
@@ -111,39 +111,28 @@ class _NewContractFormState extends State<NewContractForm> {
                   )),
             ],
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              Container(
-                width: MediaQuery.of(context).size.width * 0.43,
-                margin: const EdgeInsets.only(bottom: 5.0),
-                padding: const EdgeInsets.only(left: 21.0, right: 21.0),
-                child: RadioListTile(
-                    title: const Text('No'),
-                    value: _options[0],
-                    groupValue: _currentOption,
-                    onChanged: (val) {
-                      setState(() {
-                        _currentOption = val.toString();
-                      });
-                    }),
-              ),
-              Container(
-                width: MediaQuery.of(context).size.width * 0.43,
-                margin: const EdgeInsets.only(bottom: 5.0),
-                padding: const EdgeInsets.only(left: 21.0, right: 21.0),
-                child: RadioListTile(
-                    title: const Text('Yes'),
-                    value: _options[1],
-                    groupValue: _currentOption,
-                    onChanged: (val) {
-                      setState(() {
-                        _currentOption = val.toString();
-                      });
-                    }),
-              ),
-            ],
-          ),
+          Container(
+              width: MediaQuery.of(context).size.width * 0.89,
+              padding: const EdgeInsets.only(left: 21.0, right: 21.0),
+              margin: const EdgeInsets.only(bottom: 8.0),
+              child: DropdownButtonFormField(
+                value: _automaticRenewal,
+                decoration: const InputDecoration(
+                    labelText: '', labelStyle: TextStyle(color: primaryColor)),
+                items: _options.map((String countryValue) {
+                  return DropdownMenuItem<String>(
+                    value: countryValue,
+                    child: Text(
+                      countryValue,
+                      style: const TextStyle(color: txtBlackColor),
+                    ),
+                  );
+                }).toList(),
+                // validator: (val) => val == null ? 'Country ?' : null,
+                onChanged: (val) => setState(() {
+                  _automaticRenewal = val as String;
+                }),
+              )),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,

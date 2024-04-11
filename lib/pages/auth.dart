@@ -29,8 +29,10 @@ class AuthPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Container(
-                margin: const EdgeInsets.only(bottom: 13.0),
+                margin:
+                    const EdgeInsets.only(bottom: 13.0, left: 8.0, right: 8.0),
                 child: const Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text('All Your Policies, One App',
                         style: TextStyle(
@@ -43,13 +45,6 @@ class AuthPage extends StatelessWidget {
             const SizedBox(
               height: 13.0,
             ),
-            /* ElevatedButton(
-              onPressed: () => log('Tapped google button'),
-              child: const Text(
-                'Continue with Google',
-                style: TextStyle(color: primaryColor),
-              ),
-            ), */
             const SizedBox(
               height: 13.0,
             ),
