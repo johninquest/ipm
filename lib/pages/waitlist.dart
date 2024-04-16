@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 // import 'package:go_router/go_router.dart';
 // import '../../pages/home.dart';
 import '../../style/colors.dart';
@@ -9,7 +10,7 @@ class WaitlistPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const String appName = 'InsureMate';
+    const String appName = 'PolicyTrackr';
     return Scaffold(
       appBar: AppBar(
         title: const Text(
@@ -28,11 +29,28 @@ class WaitlistPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Container(
+                height: MediaQuery.of(context).size.width * 0.55,
+                width: MediaQuery.of(context).size.width * 0.89,
                 margin:
-                    const EdgeInsets.only(bottom: 13.0, left: 8.0, right: 8.0),
+                    const EdgeInsets.only(bottom: 21.0, left: 8.0, right: 8.0),
+                padding: const EdgeInsets.all(3.0),
                 child: const Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
+                    Text('Transforming Chaos into Clarity',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          wordSpacing: 1.0,
+                        )),
+                    Text(
+                        'With the PolicyTrackr app, regain control and keep all your policies organized effortlessly!',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            wordSpacing: 1.0,
+                            color: primaryColor)),
+                    Spacer(),
                     Text('Be Among the First',
                         style: TextStyle(
                             fontWeight: FontWeight.bold,
@@ -41,7 +59,15 @@ class WaitlistPage extends StatelessWidget {
                     SizedBox(
                       height: 13.0,
                     ),
-                    Text('Join the $appName Waitlist',
+                    TextField(
+                      decoration: InputDecoration(
+                          prefixIcon: Icon(Icons.alternate_email),
+                          label: Text('Enter your e-mail')),
+                    ),
+                    SizedBox(
+                      height: 8.0,
+                    ),
+                    Text('Join the $appName waitlist',
                         style:
                             TextStyle(wordSpacing: 1.0, color: primaryColor)),
                   ],
