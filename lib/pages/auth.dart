@@ -3,7 +3,7 @@ import 'package:go_router/go_router.dart';
 // import '../../pages/home.dart';
 import '../../style/colors.dart';
 // import '../../utils/router.dart';
-import 'dart:developer';
+// import 'dart:developer';
 
 class AuthPage extends StatelessWidget {
   const AuthPage({super.key});

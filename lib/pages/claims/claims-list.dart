@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'dart:developer';
+// import 'dart:developer';
 
 class ClaimsListPage extends StatelessWidget {
   const ClaimsListPage({super.key});

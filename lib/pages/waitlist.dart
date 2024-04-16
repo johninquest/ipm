@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 // import 'package:go_router/go_router.dart';
 // import '../../pages/home.dart';
 import '../../style/colors.dart';
@@ -29,58 +28,59 @@ class WaitlistPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Container(
-                height: MediaQuery.of(context).size.width * 0.55,
+                // height: MediaQuery.of(context).size.width * 0.55,
                 width: MediaQuery.of(context).size.width * 0.89,
                 margin:
                     const EdgeInsets.only(bottom: 21.0, left: 8.0, right: 8.0),
                 padding: const EdgeInsets.all(3.0),
-                child: const Column(
+                child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text('Transforming Chaos into Clarity',
+                    const Text('Transforming Chaos into Clarity',
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           wordSpacing: 1.0,
                         )),
-                    Text(
+                    const Text(
                         'With the PolicyTrackr app, regain control and keep all your policies organized effortlessly!',
                         textAlign: TextAlign.center,
                         style: TextStyle(
                             fontWeight: FontWeight.bold,
                             wordSpacing: 1.0,
                             color: primaryColor)),
-                    Spacer(),
-                    Text('Be Among the First',
+                    const SizedBox(
+                      height: 55.0,
+                    ),
+                    const Text('Be Among the First',
                         style: TextStyle(
                             fontWeight: FontWeight.bold,
                             wordSpacing: 1.0,
                             fontSize: 34.0)),
-                    SizedBox(
+                    const SizedBox(
                       height: 13.0,
                     ),
-                    TextField(
+                    const TextField(
                       decoration: InputDecoration(
                           prefixIcon: Icon(Icons.alternate_email),
                           label: Text('Enter your e-mail')),
                     ),
-                    SizedBox(
-                      height: 8.0,
+                    const SizedBox(
+                      height: 21.0,
                     ),
-                    Text('Join the $appName waitlist',
-                        style:
-                            TextStyle(wordSpacing: 1.0, color: primaryColor)),
+                    Container(
+                      margin: const EdgeInsets.all(3.0),
+                      child: ElevatedButton(
+                        onPressed: () => debugPrint('Tapped: Join waitlist'),
+                        child: const Text('Join the waitlist',
+                            style: TextStyle(
+                                wordSpacing: 1.0,
+                                color: primaryColor,
+                                fontWeight: FontWeight.bold)),
+                      ),
+                    ),
                   ],
                 )),
-
-            /*  const SizedBox(
-              height: 13.0,
-            ),
-            ElevatedButton(
-              onPressed: () => context.go('/home'),
-              // child: const Icon(Icons.home),
-              child: const Text('START', style: TextStyle(color: primaryColor)),
-            ) */
           ],
         ),
       ),
