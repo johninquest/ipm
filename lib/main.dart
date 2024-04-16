@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:ipt/pages/waitlist.dart';
 import 'pages/claims/claim-create.dart';
 import 'pages/claims/claims-list.dart';
 import 'pages/contracts/contracts_list.dart';
@@ -35,7 +36,11 @@ class MyApp extends StatelessWidget {
         ));
   }
 
-  final GoRouter _router = GoRouter(initialLocation: '/auth', routes: [
+  final GoRouter _router = GoRouter(initialLocation: '/waitlist', routes: [
+    GoRoute(
+      path: '/waitlist',
+      builder: (context, state) => const WaitlistPage(),
+    ),
     GoRoute(
       path: '/auth',
       builder: (context, state) => const AuthPage(),
