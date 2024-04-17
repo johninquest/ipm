@@ -75,6 +75,7 @@ class _UserFormState extends State<UserForm> {
         margin: const EdgeInsets.all(3.0),
         width: MediaQuery.of(context).size.width * 0.8,
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             DropdownButtonFormField(

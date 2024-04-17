@@ -42,7 +42,7 @@ class _LeftMenuState extends State<LeftMenu> {
                 color: primaryColor,
               ),
               title: const Text(
-                'CLAIMS',
+                'Claims',
               ),
               onTap: () => context.push('/claims-list'),
             ),
@@ -51,7 +51,7 @@ class _LeftMenuState extends State<LeftMenu> {
                 Icons.list_alt,
                 color: primaryColor,
               ),
-              title: const Text('POLICIES'),
+              title: const Text('Policies'),
               onTap: () => context.push('/contracts-list'),
             ),
             ListTile(
@@ -60,7 +60,7 @@ class _LeftMenuState extends State<LeftMenu> {
                 color: primaryColor,
               ),
               title: const Text(
-                'USER',
+                'User',
               ),
               /* onTap: () => PageRouter().navigateToPage(const SchoolInfoPage(), context) */
               onTap: () => context.push('/user'),

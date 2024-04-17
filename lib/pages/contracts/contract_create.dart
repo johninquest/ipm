@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import '../../shared/lists/insurance_products.dart';
+import '../../shared/lists/renewal_options.dart';
 import '../../style/colors.dart';
 
 class CreateContractPage extends StatelessWidget {
@@ -26,10 +28,12 @@ class NewContractForm extends StatefulWidget {
 class _NewContractFormState extends State<NewContractForm> {
   final _newContractFormKey = GlobalKey<FormState>();
   final _contractNumber = TextEditingController();
-  final _productType = TextEditingController();
+  // final _productType = TextEditingController();
+  String? _insuranceProduct;
+  final _insurer = TextEditingController();
   final _validFromDate = TextEditingController();
   final _validToDate = TextEditingController();
-  String? _automaticRenewal;
+  bool? _automaticRenewal;
   final List<String> _contractModules = [];
   final List<String> _options = ['no', 'yes'];
 /*   final TextEditingController _contractStartDate = TextEditingController();
@@ -51,7 +55,9 @@ class _NewContractFormState extends State<NewContractForm> {
               child: TextFormField(
                 controller: _contractNumber,
                 enabled: true,
-                decoration: const InputDecoration(labelText: 'Policy number'),
+                decoration: const InputDecoration(
+                    labelText: 'Policy number',
+                    labelStyle: TextStyle(color: primaryColor)),
                 keyboardType: TextInputType.text,
                 textCapitalization: TextCapitalization.words,
                 validator: (val) => val!.isEmpty ? 'Policy number ?' : null,
@@ -63,53 +69,78 @@ class _NewContractFormState extends State<NewContractForm> {
               width: MediaQuery.of(context).size.width * 0.89,
               margin: const EdgeInsets.only(bottom: 5.0),
               padding: const EdgeInsets.only(left: 21.0, right: 21.0),
+              child: DropdownButtonFormField(
+                value: _insuranceProduct,
+                decoration: const InputDecoration(
+                    labelText: 'Insurance product',
+                    labelStyle: TextStyle(color: primaryColor)),
+                items: insuranceProducts,
+                // validator: (val) => val == null ? 'Country ?' : null,
+                onChanged: (val) => setState(() {
+                  _insuranceProduct = val as String;
+                }),
+              )),
+          Container(
+              width: MediaQuery.of(context).size.width * 0.89,
+              margin: const EdgeInsets.only(bottom: 5.0),
+              padding: const EdgeInsets.only(left: 21.0, right: 21.0),
               child: TextFormField(
-                controller: _productType,
+                controller: _insurer,
                 enabled: true,
-                decoration: const InputDecoration(labelText: 'Product type'),
+                decoration: const InputDecoration(
+                    labelText: 'Insurer',
+                    labelStyle: TextStyle(color: primaryColor)),
                 keyboardType: TextInputType.text,
                 textCapitalization: TextCapitalization.words,
-                validator: (val) => val!.isEmpty ? 'Product type ?' : null,
-                /* onChanged: (val) => setState(() {
-                  surname = val;
-                }), */
+                validator: (val) => val!.isEmpty ? 'Insurer ?' : null,
+                /*  onChanged: (val) => setState(() {
+                  _insurer = val as String;
+                }),  */
               )),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              Container(
-                  width: MediaQuery.of(context).size.width * 0.43,
-                  margin: const EdgeInsets.only(bottom: 5.0),
-                  padding: const EdgeInsets.only(left: 21.0, right: 21.0),
-                  child: TextFormField(
-                    controller: _validFromDate,
-                    enabled: true,
-                    decoration: const InputDecoration(labelText: 'Valid from'),
-                    keyboardType: TextInputType.text,
-                    textCapitalization: TextCapitalization.words,
-                    validator: (val) =>
-                        val!.isEmpty ? 'Contract valid from?' : null,
-                    /* onChanged: (val) => setState(() {
-                      surname = val;
-                    }), */
-                  )),
-              Container(
-                  width: MediaQuery.of(context).size.width * 0.43,
-                  margin: const EdgeInsets.only(bottom: 5.0),
-                  padding: const EdgeInsets.only(left: 21.0, right: 21.0),
-                  child: TextFormField(
-                    controller: _validToDate,
-                    enabled: true,
-                    decoration: const InputDecoration(labelText: 'Valid to'),
-                    keyboardType: TextInputType.text,
-                    textCapitalization: TextCapitalization.words,
-                    validator: (val) =>
-                        val!.isEmpty ? 'Contract valid to ?' : null,
-                    /* onChanged: (val) => setState(() {
-                      surname = val;
-                    }), */
-                  )),
-            ],
+          Container(
+            width: MediaQuery.of(context).size.width * 0.89,
+            margin: const EdgeInsets.only(bottom: 5.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Container(
+                    width: MediaQuery.of(context).size.width * 0.34,
+                    margin: const EdgeInsets.only(left: 1.0, right: 3.0),
+                    // padding: const EdgeInsets.only(left: 3.0, right: 21.0),
+                    child: TextFormField(
+                      controller: _validFromDate,
+                      enabled: true,
+                      decoration: const InputDecoration(
+                          labelText: 'Valid from',
+                          labelStyle: TextStyle(color: primaryColor)),
+                      keyboardType: TextInputType.text,
+                      textCapitalization: TextCapitalization.words,
+                      validator: (val) =>
+                          val!.isEmpty ? 'Contract valid from?' : null,
+                      /* onChanged: (val) => setState(() {
+                        surname = val;
+                      }), */
+                    )),
+                Container(
+                    width: MediaQuery.of(context).size.width * 0.34,
+                    margin: const EdgeInsets.only(left: 3.0, right: 1.0),
+                    // padding: const EdgeInsets.only(left: 21.0, right: 8.0),
+                    child: TextFormField(
+                      controller: _validToDate,
+                      enabled: true,
+                      decoration: const InputDecoration(
+                          labelText: 'Valid to',
+                          labelStyle: TextStyle(color: primaryColor)),
+                      keyboardType: TextInputType.text,
+                      textCapitalization: TextCapitalization.words,
+                      validator: (val) =>
+                          val!.isEmpty ? 'Contract valid to ?' : null,
+                      /* onChanged: (val) => setState(() {
+                        surname = val;
+                      }), */
+                    )),
+              ],
+            ),
           ),
           Container(
               width: MediaQuery.of(context).size.width * 0.89,
@@ -118,19 +149,12 @@ class _NewContractFormState extends State<NewContractForm> {
               child: DropdownButtonFormField(
                 value: _automaticRenewal,
                 decoration: const InputDecoration(
-                    labelText: '', labelStyle: TextStyle(color: primaryColor)),
-                items: _options.map((String countryValue) {
-                  return DropdownMenuItem<String>(
-                    value: countryValue,
-                    child: Text(
-                      countryValue,
-                      style: const TextStyle(color: txtBlackColor),
-                    ),
-                  );
-                }).toList(),
+                    labelText: 'Automatic renewal ?',
+                    labelStyle: TextStyle(color: primaryColor)),
+                items: renewalOptions,
                 // validator: (val) => val == null ? 'Country ?' : null,
                 onChanged: (val) => setState(() {
-                  _automaticRenewal = val as String;
+                  _automaticRenewal = val as bool;
                 }),
               )),
           Row(
