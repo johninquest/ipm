@@ -36,5 +36,22 @@ Names
 - Fahrrad 
 - Travel 
 - Legal fees 
-- Accident
+- Accident 
+
+## Meistverkauft
+# Privat
+- Wohngebäudeversicherung 
+- Private Haftpflichtversicherung 
+- Hausratversicherung 
+- Kfz-Versicherung 
+- Unfallversicherung 
+
+# Gewerbe
+- Betriebshaftpflicht 
+- Berufshaftpflicht 
+- Gewerbliche Sachversicherung (Gebäude, Inhalt, Betriebsunterbrechung, Maschinen, Elektronik, Transport, Glas, Feuer)
+- Cyber 
+- Gruppenunfallversicherung 
+- Vertrauensschadenversicherung
+
 -->
