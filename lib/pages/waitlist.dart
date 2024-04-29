@@ -9,7 +9,7 @@ class WaitlistPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const String appName = 'PolicyTrackr';
+    const String appName = 'InsurAlly';
     return Scaffold(
       appBar: AppBar(
         title: const Text(
@@ -36,14 +36,14 @@ class WaitlistPage extends StatelessWidget {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    const Text('Transforming Chaos into Clarity',
+                    const Text('All Your Policies, One App',
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           wordSpacing: 1.0,
                         )),
                     const Text(
-                        'With the PolicyTrackr app, regain control and keep all your policies organized effortlessly!',
+                        'InsurAlly will help you regain control and manage all your insurance policies from one app!',
                         textAlign: TextAlign.center,
                         style: TextStyle(
                             fontWeight: FontWeight.bold,

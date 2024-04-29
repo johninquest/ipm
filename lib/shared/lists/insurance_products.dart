@@ -6,12 +6,12 @@ List<DropdownMenuItem> insuranceProducts = [
     child: Text('Accident'),
   ),
   const DropdownMenuItem<String>(
-    value: 'auto',
-    child: Text('Auto'),
-  ),
-  const DropdownMenuItem<String>(
     value: 'bicycle',
     child: Text('Bicycle'),
+  ),
+  const DropdownMenuItem<String>(
+    value: 'car',
+    child: Text('Car'),
   ),
   const DropdownMenuItem<String>(
     value: 'health',
