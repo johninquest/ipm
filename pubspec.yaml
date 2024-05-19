@@ -1,5 +1,5 @@
-name: ipt
-description: A simple app to help you keep track of your insurance policies.
+name: ipm
+description: Organize and access all your insurance policies in one simple app.
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
 publish_to: "none" # Remove this line if you wish to publish to pub.dev

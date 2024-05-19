@@ -17,7 +17,7 @@ class AuthPage extends StatelessWidget {
           style: TextStyle(
               color: primaryColor,
               letterSpacing: 3.0,
-              fontSize: 13.0,
+              /* fontSize: 13.0, */
               fontWeight: FontWeight.bold),
         ),
         centerTitle: true,
@@ -34,12 +34,12 @@ class AuthPage extends StatelessWidget {
                 child: const Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text('All Your Policies, One App',
+                    Text('All Your Insurance Policies, One App',
                         style: TextStyle(
                             fontWeight: FontWeight.bold, wordSpacing: 3.0)),
-                    Text(
+                    /* Text(
                         'Manage all your insurance coverages in one secure & organized location',
-                        style: TextStyle(wordSpacing: 1.0)),
+                        style: TextStyle(wordSpacing: 1.0)), */
                   ],
                 )),
             const SizedBox(
