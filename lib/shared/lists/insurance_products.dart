@@ -57,11 +57,12 @@ List<DropdownMenuItem> insuranceProducts = [
   "bicycle", // Assuming "Fahrrad" refers to Bicycle insurance
   "health",
   "homeowners",
-  "home contents",
-  "legal fees",
-  "liability",
+  "home_contents",
+  "legal_fees",
   "life",
+  "personal_liability",
+  "pet",
   "renters",
   "travel",
-]; */
-
+];
+ */
