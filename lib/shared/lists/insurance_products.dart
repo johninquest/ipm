@@ -38,6 +38,10 @@ List<DropdownMenuItem> insuranceProducts = [
     child: Text('Life'),
   ),
   const DropdownMenuItem<String>(
+    value: 'pet',
+    child: Text('Pet'),
+  ),
+  const DropdownMenuItem<String>(
     value: 'renters',
     child: Text('Renters'),
   ),

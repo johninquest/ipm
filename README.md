@@ -46,6 +46,9 @@ Names
 - Kfz-Versicherung
 - Unfallversicherung
 
+# Others
+- Tierversicherung -> Haftpflicht, Krank
+
 # Gewerbe
 - Betriebshaftpflicht
 - Berufshaftpflicht
