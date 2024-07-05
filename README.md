@@ -6,18 +6,20 @@
 
 ## Other notes
 
-##
-Names
+## Names
 - InsurAlly ***
 - CoverNest
 - InsurSafe
-- PolicyKeeper -> Polikeepr
+- PolicyKeeper
 - CoverView
 - Policy Pocket
 
 ## Catchphrases
 - Simplify Your Insurance Life: Organize all your policies in one place. Get peace of mind knowing you're covered.
-- All Your Policies, One App: From health to home, manage all your insurance coverage in one secure, organized location.
+- All Your Policies, One App: From health to home, manage all your insurance coverage in one secure, organized location. 
+
+- New -> DE -> All deine Versicherungspolicen auf einen Blick - in einer App. 
+      -> EN -> All your Insurance Policies at a Glance. In One App
 
 ## Regulation
 - https://www.gesetze-im-internet.de/englisch_vvg/index.html
