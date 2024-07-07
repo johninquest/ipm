@@ -36,7 +36,7 @@ macos/
 windows/ 
 
 # Android
-android/
+# android/
 
 
 # Symbolication related
