@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../../shared/lists/insurance_products.dart';
 import '../../shared/lists/renewal_options.dart';
 import '../../style/colors.dart';
+import '../../utils/date_time_helper.dart';
 
 class CreateContractPage extends StatelessWidget {
   const CreateContractPage({super.key});
@@ -26,25 +27,50 @@ class NewContractForm extends StatefulWidget {
 }
 
 class _NewContractFormState extends State<NewContractForm> {
-  final _newContractFormKey = GlobalKey<FormState>();
-  final _contractNumber = TextEditingController();
+  final newContractFormKey = GlobalKey<FormState>();
+  final contractNumber = TextEditingController();
   // final _productType = TextEditingController();
-  String? _insuranceProduct;
-  final _insurer = TextEditingController();
-  final _validFromDate = TextEditingController();
-  final _validToDate = TextEditingController();
-  bool? _automaticRenewal;
+  String? insuranceProduct;
+  final insurer = TextEditingController();
+  final validFromDate = TextEditingController();
+  final validToDate = TextEditingController();
+  bool? automaticRenewal;
   final List<String> _contractModules = [];
-  final List<String> _options = ['no', 'yes'];
-/*   final TextEditingController _contractStartDate = TextEditingController();
-  String? _contractType;
-  String? _productCategory;
-  bool? _contractExtendsAutomatically; */
+
+  DateTime selectedDate = DateTime.now();
+  Future<void> _selectValidFromDate(BuildContext context) async {
+    final DateTime? picked = await showDatePicker(
+        context: context,
+        initialDate: selectedDate,
+        firstDate: DateTime(1990, 1),
+        lastDate: DateTime(2101));
+    if (picked != null && picked != selectedDate) {
+      setState(() {
+        // selectedDate = picked;
+        validFromDate.text = DateTimeHelper().toDeDateFormat('$picked');
+        // _pickedDate.text = DateTimeFormatter().toDateString(picked);
+      });
+    }
+  }
+
+  Future<void> _selectValidToDate(BuildContext context) async {
+    final DateTime? picked = await showDatePicker(
+        context: context,
+        initialDate: selectedDate,
+        firstDate: DateTime(1990, 1),
+        lastDate: DateTime(2101));
+    if (picked != null && picked != selectedDate) {
+      setState(() {
+        validToDate.text = DateTimeHelper().toDeDateFormat('$picked');
+      });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     // String _currentOption = _options[0];
     return Form(
-      key: _newContractFormKey,
+      key: newContractFormKey,
       child: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Column(children: [
@@ -53,7 +79,7 @@ class _NewContractFormState extends State<NewContractForm> {
               margin: const EdgeInsets.only(bottom: 5.0),
               padding: const EdgeInsets.only(left: 21.0, right: 21.0),
               child: TextFormField(
-                controller: _contractNumber,
+                controller: contractNumber,
                 enabled: true,
                 decoration: const InputDecoration(
                     labelText: 'Policy number',
@@ -70,14 +96,14 @@ class _NewContractFormState extends State<NewContractForm> {
               margin: const EdgeInsets.only(bottom: 5.0),
               padding: const EdgeInsets.only(left: 21.0, right: 21.0),
               child: DropdownButtonFormField(
-                value: _insuranceProduct,
+                value: insuranceProduct,
                 decoration: const InputDecoration(
                     labelText: 'Insurance product',
                     labelStyle: TextStyle(color: primaryColor)),
                 items: insuranceProducts,
                 // validator: (val) => val == null ? 'Country ?' : null,
                 onChanged: (val) => setState(() {
-                  _insuranceProduct = val as String;
+                  insuranceProduct = val as String;
                 }),
               )),
           Container(
@@ -85,7 +111,7 @@ class _NewContractFormState extends State<NewContractForm> {
               margin: const EdgeInsets.only(bottom: 5.0),
               padding: const EdgeInsets.only(left: 21.0, right: 21.0),
               child: TextFormField(
-                controller: _insurer,
+                controller: insurer,
                 enabled: true,
                 decoration: const InputDecoration(
                     labelText: 'Insurer',
@@ -97,64 +123,62 @@ class _NewContractFormState extends State<NewContractForm> {
                   _insurer = val as String;
                 }),  */
               )),
-          Container(
-            width: MediaQuery.of(context).size.width * 0.89,
-            margin: const EdgeInsets.only(bottom: 5.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Container(
-                    width: MediaQuery.of(context).size.width * 0.34,
-                    margin: const EdgeInsets.only(left: 1.0, right: 3.0),
-                    // padding: const EdgeInsets.only(left: 3.0, right: 21.0),
-                    child: TextFormField(
-                      controller: _validFromDate,
-                      enabled: true,
-                      decoration: const InputDecoration(
-                          labelText: 'Valid from',
-                          labelStyle: TextStyle(color: primaryColor)),
-                      keyboardType: TextInputType.text,
-                      textCapitalization: TextCapitalization.words,
-                      validator: (val) =>
-                          val!.isEmpty ? 'Contract valid from?' : null,
-                      /* onChanged: (val) => setState(() {
-                        surname = val;
-                      }), */
-                    )),
-                Container(
-                    width: MediaQuery.of(context).size.width * 0.34,
-                    margin: const EdgeInsets.only(left: 3.0, right: 1.0),
-                    // padding: const EdgeInsets.only(left: 21.0, right: 8.0),
-                    child: TextFormField(
-                      controller: _validToDate,
-                      enabled: true,
-                      decoration: const InputDecoration(
-                          labelText: 'Valid to',
-                          labelStyle: TextStyle(color: primaryColor)),
-                      keyboardType: TextInputType.text,
-                      textCapitalization: TextCapitalization.words,
-                      validator: (val) =>
-                          val!.isEmpty ? 'Contract valid to ?' : null,
-                      /* onChanged: (val) => setState(() {
-                        surname = val;
-                      }), */
-                    )),
-              ],
-            ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Container(
+                  width: MediaQuery.of(context).size.width * 0.43,
+                  margin: const EdgeInsets.only(bottom: 5.0),
+                  padding: const EdgeInsets.symmetric(horizontal: 21.0),
+                  child: TextFormField(
+                    controller: validFromDate,
+                    enabled: true,
+                    decoration: const InputDecoration(
+                        labelText: 'Valid from',
+                        labelStyle: TextStyle(color: primaryColor)),
+                    keyboardType: TextInputType.text,
+                    textCapitalization: TextCapitalization.words,
+                    validator: (val) =>
+                        val!.isEmpty ? 'Contract valid from?' : null,
+                    onTap: () => _selectValidFromDate(context),
+                    /* onChanged: (val) => setState(() {
+                      surname = val;
+                    }), */
+                  )),
+              Container(
+                  width: MediaQuery.of(context).size.width * 0.43,
+                  margin: const EdgeInsets.only(bottom: 5.0),
+                  padding: const EdgeInsets.symmetric(horizontal: 21.0),
+                  child: TextFormField(
+                    controller: validToDate,
+                    enabled: true,
+                    decoration: const InputDecoration(
+                        labelText: 'Valid to',
+                        labelStyle: TextStyle(color: primaryColor)),
+                    keyboardType: TextInputType.text,
+                    textCapitalization: TextCapitalization.words,
+                    validator: (val) =>
+                        val!.isEmpty ? 'Contract valid to ?' : null,
+                    onTap: () => _selectValidToDate(context),
+                    /* onChanged: (val) => setState(() {
+                      surname = val;
+                    }), */
+                  )),
+            ],
           ),
           Container(
               width: MediaQuery.of(context).size.width * 0.89,
               padding: const EdgeInsets.only(left: 21.0, right: 21.0),
               margin: const EdgeInsets.only(bottom: 8.0),
               child: DropdownButtonFormField(
-                value: _automaticRenewal,
+                value: automaticRenewal,
                 decoration: const InputDecoration(
                     labelText: 'Automatic renewal ?',
                     labelStyle: TextStyle(color: primaryColor)),
                 items: renewalOptions,
                 // validator: (val) => val == null ? 'Country ?' : null,
                 onChanged: (val) => setState(() {
-                  _automaticRenewal = val as bool;
+                  automaticRenewal = val as bool;
                 }),
               )),
           Row(

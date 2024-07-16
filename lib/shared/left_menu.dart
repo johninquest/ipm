@@ -51,7 +51,7 @@ class _LeftMenuState extends State<LeftMenu> {
                 Icons.list_alt,
                 color: primaryColor,
               ),
-              title: const Text('Policies'),
+              title: const Text('Contracts'),
               onTap: () => context.push('/contracts-list'),
             ),
             ListTile(
