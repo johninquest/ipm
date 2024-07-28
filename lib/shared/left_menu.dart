@@ -36,7 +36,7 @@ class _LeftMenuState extends State<LeftMenu> {
                     )
                   ],
                 )),
-            ListTile(
+            /*   ListTile(
               leading: const Icon(
                 Icons.request_page_outlined,
                 color: primaryColor,
@@ -45,13 +45,13 @@ class _LeftMenuState extends State<LeftMenu> {
                 'Claims',
               ),
               onTap: () => context.push('/claims-list'),
-            ),
+            ), */
             ListTile(
               leading: const Icon(
                 Icons.list_alt,
                 color: primaryColor,
               ),
-              title: const Text('Policies'),
+              title: const Text('Contracts'),
               onTap: () => context.push('/contracts-list'),
             ),
             ListTile(

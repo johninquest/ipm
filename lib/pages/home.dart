@@ -40,16 +40,11 @@ class HomePage extends StatelessWidget {
       /* drawer: const LeftMenu(), */
       body: Center(
           child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-        /*  ElevatedButton(
-          style: ElevatedButton.styleFrom(),
-          onPressed: () => debugPrint('Tapped TAP ME button'),
-          child: const Text('TAP ME'),
-        ), */
-        ElevatedButton(
+        /* ElevatedButton(
           style: ElevatedButton.styleFrom(),
           onPressed: () => context.push('/claims-list'),
-          child: const Text('CLAIMS LIST'),
-        ),
+          child: const Text('CLAIMS', style: TextStyle(letterSpacing: 1.0)),
+        ), */
         const SizedBox(
           height: 13.0,
         ),
@@ -57,7 +52,8 @@ class HomePage extends StatelessWidget {
           style: ElevatedButton.styleFrom(),
           onPressed: () => context.push('/contracts-list'),
           child: const Text(
-            'POLICY LIST',
+            'CONTRACTS',
+            style: TextStyle(letterSpacing: 1.0),
           ),
         ),
         const SizedBox(
@@ -66,7 +62,7 @@ class HomePage extends StatelessWidget {
         ElevatedButton(
           style: ElevatedButton.styleFrom(),
           onPressed: () => debugPrint('Tapped NEW button'),
-          child: const Text('NEW'),
+          child: const Text('NEW CONTRACT'),
         ),
       ])),
       /* bottomNavigationBar: const BottomNavBar(), */
