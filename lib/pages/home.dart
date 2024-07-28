@@ -61,7 +61,7 @@ class HomePage extends StatelessWidget {
         ),
         ElevatedButton(
           style: ElevatedButton.styleFrom(),
-          onPressed: () => debugPrint('Tapped NEW button'),
+          onPressed: () => context.push('/contract-create'),
           child: const Text('NEW CONTRACT'),
         ),
       ])),

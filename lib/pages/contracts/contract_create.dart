@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../shared/lists/insurance_products.dart';
+import '../../shared/lists/payment_frequency_options.dart';
 import '../../shared/lists/renewal_options.dart';
 import '../../style/colors.dart';
 import '../../utils/date_time_helper.dart';
@@ -35,6 +36,7 @@ class _NewContractFormState extends State<NewContractForm> {
   final validFromDate = TextEditingController();
   final validToDate = TextEditingController();
   bool? automaticRenewal;
+  int? paymentFrequency;
   final List<String> _contractModules = [];
 
   DateTime selectedDate = DateTime.now();
@@ -78,23 +80,6 @@ class _NewContractFormState extends State<NewContractForm> {
               width: MediaQuery.of(context).size.width * 0.89,
               margin: const EdgeInsets.only(bottom: 5.0),
               padding: const EdgeInsets.only(left: 21.0, right: 21.0),
-              child: TextFormField(
-                controller: contractNumber,
-                enabled: true,
-                decoration: const InputDecoration(
-                    labelText: 'Policy number',
-                    labelStyle: TextStyle(color: primaryColor)),
-                keyboardType: TextInputType.text,
-                textCapitalization: TextCapitalization.words,
-                validator: (val) => val!.isEmpty ? 'Policy number ?' : null,
-                /* onChanged: (val) => setState(() {
-                  surname = val;
-                }), */
-              )),
-          Container(
-              width: MediaQuery.of(context).size.width * 0.89,
-              margin: const EdgeInsets.only(bottom: 5.0),
-              padding: const EdgeInsets.only(left: 21.0, right: 21.0),
               child: DropdownButtonFormField(
                 value: insuranceProduct,
                 decoration: const InputDecoration(
@@ -122,6 +107,36 @@ class _NewContractFormState extends State<NewContractForm> {
                 /*  onChanged: (val) => setState(() {
                   _insurer = val as String;
                 }),  */
+              )),
+          Container(
+              width: MediaQuery.of(context).size.width * 0.89,
+              margin: const EdgeInsets.only(bottom: 5.0),
+              padding: const EdgeInsets.only(left: 21.0, right: 21.0),
+              child: TextFormField(
+                controller: contractNumber,
+                enabled: true,
+                decoration: const InputDecoration(
+                    labelText: 'Policy number',
+                    labelStyle: TextStyle(color: primaryColor)),
+                keyboardType: TextInputType.text,
+                textCapitalization: TextCapitalization.words,
+                validator: (val) => val!.isEmpty ? 'Policy number ?' : null,
+                /* onChanged: (val) => setState(() {
+                  surname = val;
+                }), */
+              )),
+          Container(
+              width: MediaQuery.of(context).size.width * 0.89,
+              margin: const EdgeInsets.only(bottom: 5.0),
+              padding: const EdgeInsets.only(left: 21.0, right: 21.0),
+              child: TextFormField(
+                controller: insurer,
+                enabled: true,
+                decoration: const InputDecoration(
+                    labelText: 'Insured sum',
+                    labelStyle: TextStyle(color: primaryColor)),
+                keyboardType: TextInputType.number,
+                validator: (val) => val!.isEmpty ? 'Insured sum ?' : null,
               )),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -166,6 +181,34 @@ class _NewContractFormState extends State<NewContractForm> {
                   )),
             ],
           ),
+          Container(
+              width: MediaQuery.of(context).size.width * 0.89,
+              margin: const EdgeInsets.only(bottom: 5.0),
+              padding: const EdgeInsets.only(left: 21.0, right: 21.0),
+              child: TextFormField(
+                controller: insurer,
+                enabled: true,
+                decoration: const InputDecoration(
+                    labelText: 'Premium',
+                    labelStyle: TextStyle(color: primaryColor)),
+                keyboardType: TextInputType.number,
+                validator: (val) => val!.isEmpty ? 'Premium ?' : null,
+              )),
+          Container(
+              width: MediaQuery.of(context).size.width * 0.89,
+              padding: const EdgeInsets.only(left: 21.0, right: 21.0),
+              margin: const EdgeInsets.only(bottom: 8.0),
+              child: DropdownButtonFormField(
+                value: paymentFrequency,
+                decoration: const InputDecoration(
+                    labelText: 'Payment frequency',
+                    labelStyle: TextStyle(color: primaryColor)),
+                items: paymentFrequencyOptions,
+                // validator: (val) => val == null ? 'Country ?' : null,
+                onChanged: (val) => setState(() {
+                  automaticRenewal = val as bool;
+                }),
+              )),
           Container(
               width: MediaQuery.of(context).size.width * 0.89,
               padding: const EdgeInsets.only(left: 21.0, right: 21.0),
