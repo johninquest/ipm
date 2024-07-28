@@ -40,16 +40,11 @@ class HomePage extends StatelessWidget {
       /* drawer: const LeftMenu(), */
       body: Center(
           child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-        /*  ElevatedButton(
-          style: ElevatedButton.styleFrom(),
-          onPressed: () => debugPrint('Tapped TAP ME button'),
-          child: const Text('TAP ME'),
-        ), */
-        ElevatedButton(
+        /* ElevatedButton(
           style: ElevatedButton.styleFrom(),
           onPressed: () => context.push('/claims-list'),
           child: const Text('CLAIMS', style: TextStyle(letterSpacing: 1.0)),
-        ),
+        ), */
         const SizedBox(
           height: 13.0,
         ),
