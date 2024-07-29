@@ -143,7 +143,7 @@ class _NewContractFormState extends State<NewContractForm> {
             children: [
               Container(
                   width: MediaQuery.of(context).size.width * 0.43,
-                  margin: const EdgeInsets.only(bottom: 5.0),
+                  margin: const EdgeInsets.only(bottom: 5.0, left: 5.0),
                   padding: const EdgeInsets.symmetric(horizontal: 21.0),
                   child: TextFormField(
                     controller: validFromDate,
@@ -162,7 +162,7 @@ class _NewContractFormState extends State<NewContractForm> {
                   )),
               Container(
                   width: MediaQuery.of(context).size.width * 0.43,
-                  margin: const EdgeInsets.only(bottom: 5.0),
+                  margin: const EdgeInsets.only(bottom: 5.0, right: 5.0),
                   padding: const EdgeInsets.symmetric(horizontal: 21.0),
                   child: TextFormField(
                     controller: validToDate,
