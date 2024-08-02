@@ -83,7 +83,7 @@ class _NewContractFormState extends State<NewContractForm> {
               child: DropdownButtonFormField(
                 value: insuranceProduct,
                 decoration: const InputDecoration(
-                    labelText: 'Insurance product',
+                    labelText: 'Policy type',
                     labelStyle: TextStyle(color: primaryColor)),
                 items: insuranceProducts,
                 // validator: (val) => val == null ? 'Country ?' : null,
@@ -99,11 +99,12 @@ class _NewContractFormState extends State<NewContractForm> {
                 controller: insurer,
                 enabled: true,
                 decoration: const InputDecoration(
-                    labelText: 'Insurer',
+                    labelText: 'Insurance provider',
                     labelStyle: TextStyle(color: primaryColor)),
                 keyboardType: TextInputType.text,
                 textCapitalization: TextCapitalization.words,
-                validator: (val) => val!.isEmpty ? 'Insurer ?' : null,
+                validator: (val) =>
+                    val!.isEmpty ? 'Insurance provider ?' : null,
                 /*  onChanged: (val) => setState(() {
                   _insurer = val as String;
                 }),  */
@@ -133,54 +134,11 @@ class _NewContractFormState extends State<NewContractForm> {
                 controller: insurer,
                 enabled: true,
                 decoration: const InputDecoration(
-                    labelText: 'Insured sum',
+                    labelText: 'Coverage amount',
                     labelStyle: TextStyle(color: primaryColor)),
                 keyboardType: TextInputType.number,
-                validator: (val) => val!.isEmpty ? 'Insured sum ?' : null,
+                validator: (val) => val!.isEmpty ? 'Coverage amount ?' : null,
               )),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              Container(
-                  width: MediaQuery.of(context).size.width * 0.43,
-                  margin: const EdgeInsets.only(bottom: 5.0, left: 5.0),
-                  padding: const EdgeInsets.symmetric(horizontal: 21.0),
-                  child: TextFormField(
-                    controller: validFromDate,
-                    enabled: true,
-                    decoration: const InputDecoration(
-                        labelText: 'Valid from',
-                        labelStyle: TextStyle(color: primaryColor)),
-                    keyboardType: TextInputType.text,
-                    textCapitalization: TextCapitalization.words,
-                    validator: (val) =>
-                        val!.isEmpty ? 'Contract valid from?' : null,
-                    onTap: () => _selectValidFromDate(context),
-                    /* onChanged: (val) => setState(() {
-                      surname = val;
-                    }), */
-                  )),
-              Container(
-                  width: MediaQuery.of(context).size.width * 0.43,
-                  margin: const EdgeInsets.only(bottom: 5.0, right: 5.0),
-                  padding: const EdgeInsets.symmetric(horizontal: 21.0),
-                  child: TextFormField(
-                    controller: validToDate,
-                    enabled: true,
-                    decoration: const InputDecoration(
-                        labelText: 'Valid to',
-                        labelStyle: TextStyle(color: primaryColor)),
-                    keyboardType: TextInputType.text,
-                    textCapitalization: TextCapitalization.words,
-                    validator: (val) =>
-                        val!.isEmpty ? 'Contract valid to ?' : null,
-                    onTap: () => _selectValidToDate(context),
-                    /* onChanged: (val) => setState(() {
-                      surname = val;
-                    }), */
-                  )),
-            ],
-          ),
           Container(
               width: MediaQuery.of(context).size.width * 0.89,
               margin: const EdgeInsets.only(bottom: 5.0),
@@ -195,6 +153,52 @@ class _NewContractFormState extends State<NewContractForm> {
                 validator: (val) => val!.isEmpty ? 'Premium ?' : null,
               )),
           Container(
+            width: MediaQuery.of(context).size.width * 0.89,
+            margin: const EdgeInsets.only(bottom: 5.0),
+            /* padding: const EdgeInsets.only(left: 21.0, right: 21.0), */
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Container(
+                    width: MediaQuery.of(context).size.width * 0.43,
+                    padding: const EdgeInsets.symmetric(horizontal: 21.0),
+                    child: TextFormField(
+                      controller: validFromDate,
+                      enabled: true,
+                      decoration: const InputDecoration(
+                          labelText: 'Start date',
+                          labelStyle: TextStyle(color: primaryColor)),
+                      keyboardType: TextInputType.text,
+                      textCapitalization: TextCapitalization.words,
+                      validator: (val) =>
+                          val!.isEmpty ? 'Contract start date ?' : null,
+                      onTap: () => _selectValidFromDate(context),
+                      /* onChanged: (val) => setState(() {
+                        surname = val;
+                      }), */
+                    )),
+                Container(
+                    width: MediaQuery.of(context).size.width * 0.43,
+                    padding: const EdgeInsets.symmetric(horizontal: 21.0),
+                    child: TextFormField(
+                      controller: validToDate,
+                      enabled: true,
+                      decoration: const InputDecoration(
+                          labelText: 'End date',
+                          labelStyle: TextStyle(color: primaryColor)),
+                      keyboardType: TextInputType.text,
+                      textCapitalization: TextCapitalization.words,
+                      validator: (val) =>
+                          val!.isEmpty ? 'Contract end date ?' : null,
+                      onTap: () => _selectValidToDate(context),
+                      /* onChanged: (val) => setState(() {
+                        surname = val;
+                      }), */
+                    )),
+              ],
+            ),
+          ),
+          /* Container(
               width: MediaQuery.of(context).size.width * 0.89,
               padding: const EdgeInsets.only(left: 21.0, right: 21.0),
               margin: const EdgeInsets.only(bottom: 8.0),
@@ -223,28 +227,31 @@ class _NewContractFormState extends State<NewContractForm> {
                 onChanged: (val) => setState(() {
                   automaticRenewal = val as bool;
                 }),
-              )),
+              )), */
+          const SizedBox(
+            height: 8.0,
+          ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Container(
-                margin: const EdgeInsets.all(10.0),
+                margin: const EdgeInsets.all(8.0),
                 child: ElevatedButton(
                   onPressed: () => Navigator.of(context).pop(),
                   style: ElevatedButton.styleFrom(),
-                  child: Text(
-                    'cancel'.toUpperCase(),
-                    style: const TextStyle(color: txtBlackColor),
+                  child: const Text(
+                    'CANCEL',
+                    style: TextStyle(color: txtBlackColor),
                   ),
                 ),
               ),
               Container(
-                margin: const EdgeInsets.all(10.0),
+                margin: const EdgeInsets.all(8.0),
                 child: ElevatedButton(
                   onPressed: () {},
-                  child: Text(
-                    'save'.toUpperCase(),
+                  child: const Text(
+                    'SAVE',
                   ),
                 ),
               )
