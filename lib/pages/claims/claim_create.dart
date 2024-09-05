@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'dart:developer';
 
 class ClaimCreatePage extends StatelessWidget {
   const ClaimCreatePage({super.key});
@@ -13,11 +12,6 @@ class ClaimCreatePage extends StatelessWidget {
       ),
       body: const Center(
         child: Text('New insurance claim'),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () => log('Tapped add new claim button'),
-        tooltip: 'Add',
-        child: const Icon(Icons.add),
       ),
     );
   }

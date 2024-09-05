@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'pages/claims/claim-create.dart';
-import 'pages/claims/claims-list.dart';
+import 'pages/claims/claim_create.dart';
+import 'pages/claims/claims_list.dart';
 import 'pages/policies/policies_list.dart';
 import 'pages/policies/policy_create.dart';
 import 'pages/user/user_create.dart';
