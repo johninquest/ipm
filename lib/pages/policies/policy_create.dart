@@ -1,33 +1,33 @@
 import 'package:flutter/material.dart';
 import '../../shared/lists/insurance_products.dart';
-import '../../shared/lists/payment_frequency_options.dart';
-import '../../shared/lists/renewal_options.dart';
+/* import '../../shared/lists/payment_frequency_options.dart';
+import '../../shared/lists/renewal_options.dart'; */
 import '../../style/colors.dart';
 import '../../utils/date_time_helper.dart';
 
-class CreateContractPage extends StatelessWidget {
-  const CreateContractPage({super.key});
+class CreatePolicyPage extends StatelessWidget {
+  const CreatePolicyPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('New contract'),
+        title: const Text('New policy'),
         centerTitle: true,
       ),
-      body: const Center(child: NewContractForm()),
+      body: const Center(child: NewPolicyForm()),
     );
   }
 }
 
-class NewContractForm extends StatefulWidget {
-  const NewContractForm({super.key});
+class NewPolicyForm extends StatefulWidget {
+  const NewPolicyForm({super.key});
 
   @override
-  State<NewContractForm> createState() => _NewContractFormState();
+  State<NewPolicyForm> createState() => _NewPolicyFormState();
 }
 
-class _NewContractFormState extends State<NewContractForm> {
+class _NewPolicyFormState extends State<NewPolicyForm> {
   final newContractFormKey = GlobalKey<FormState>();
   final contractNumber = TextEditingController();
   // final _productType = TextEditingController();
@@ -37,7 +37,7 @@ class _NewContractFormState extends State<NewContractForm> {
   final validToDate = TextEditingController();
   bool? automaticRenewal;
   int? paymentFrequency;
-  final List<String> _contractModules = [];
+  // final List<String> _contractModules = [];
 
   DateTime selectedDate = DateTime.now();
   Future<void> _selectValidFromDate(BuildContext context) async {
@@ -126,7 +126,7 @@ class _NewContractFormState extends State<NewContractForm> {
                   surname = val;
                 }), */
               )),
-          Container(
+/*           Container(
               width: MediaQuery.of(context).size.width * 0.89,
               margin: const EdgeInsets.only(bottom: 5.0),
               padding: const EdgeInsets.only(left: 21.0, right: 21.0),
@@ -138,7 +138,7 @@ class _NewContractFormState extends State<NewContractForm> {
                     labelStyle: TextStyle(color: primaryColor)),
                 keyboardType: TextInputType.number,
                 validator: (val) => val!.isEmpty ? 'Coverage amount ?' : null,
-              )),
+              )), */
           Container(
               width: MediaQuery.of(context).size.width * 0.89,
               margin: const EdgeInsets.only(bottom: 5.0),

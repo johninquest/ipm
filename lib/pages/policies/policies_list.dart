@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'dart:developer';
+import 'package:go_router/go_router.dart';
+// import 'dart:developer';
 
-class PoliciesPage extends StatelessWidget {
-  const PoliciesPage({super.key});
+class PoliciesListPage extends StatelessWidget {
+  const PoliciesListPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +14,7 @@ class PoliciesPage extends StatelessWidget {
       ),
       body: const Center(child: Text('List of insurance policies')),
       floatingActionButton: FloatingActionButton(
-        onPressed: () => log('Tapped add new policy button'),
+        onPressed: () => context.push('/policy-create'),
         tooltip: 'Add',
         child: const Icon(Icons.add),
       ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import '../../style/colors.dart';
 import '../../shared/lists.dart';
 import '../../utils/custom_extensions.dart';
 import '../../utils/date_time_helper.dart';
@@ -139,6 +140,7 @@ class _UserFormState extends State<UserForm> {
               },
             ),
             TextFormField(
+              readOnly: true,
               controller: _address,
               decoration: const InputDecoration(
                 /* icon: Icon(Icons.person), */
@@ -191,7 +193,10 @@ class _UserFormState extends State<UserForm> {
                   ElevatedButton(
                     onPressed: () => GoRouter.of(context).pop(),
                     style: ElevatedButton.styleFrom(),
-                    child: const Text('BACK'),
+                    child: const Text(
+                      'BACK',
+                      style: TextStyle(color: txtBlackColor),
+                    ),
                   ),
                   ElevatedButton(
                     onPressed: () {

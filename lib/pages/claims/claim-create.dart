@@ -12,7 +12,7 @@ class ClaimCreatePage extends StatelessWidget {
         centerTitle: true,
       ),
       body: const Center(
-        child: Text('New insurance claims'),
+        child: Text('New insurance claim'),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () => log('Tapped add new claim button'),
