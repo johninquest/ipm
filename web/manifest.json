@@ -1,35 +1,38 @@
 {
     "name": "Politrk",
     "short_name": "Politrk",
-    "start_url": ".",
+    "start_url": "./", 
+    "scope": "./",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
     "description": "All Your Insurance Policies, One App",
-    "orientation": "portrait-primary",
+    "orientation": "portrait-primary", 
     "prefer_related_applications": false,
     "icons": [
         {
             "src": "icons/Icon-192.png",
             "sizes": "192x192",
-            "type": "image/png"
+            "type": "image/png", 
+             "purpose": "maskable any"
         },
         {
             "src": "icons/Icon-512.png",
             "sizes": "512x512",
-            "type": "image/png"
+            "type": "image/png", 
+             "purpose": "maskable any"
         },
         {
             "src": "icons/Icon-maskable-192.png",
             "sizes": "192x192",
             "type": "image/png",
-            "purpose": "maskable"
+            "purpose": "maskable any"
         },
         {
             "src": "icons/Icon-maskable-512.png",
             "sizes": "512x512",
             "type": "image/png",
-            "purpose": "maskable"
+            "purpose": "maskable any"
         }
     ]
 }
