@@ -40,16 +40,16 @@ class HomePage extends StatelessWidget {
       /* drawer: const LeftMenu(), */
       body: Center(
           child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-        ElevatedButton(
+        /*  ElevatedButton(
           style: ElevatedButton.styleFrom(),
           onPressed: () => context.push('/claims-list'),
           child: const Text('CLAIMS', style: TextStyle(letterSpacing: 1.0)),
-        ),
+        ), */
         const SizedBox(
           height: 13.0,
         ),
         ElevatedButton(
-          style: ElevatedButton.styleFrom(),
+          style: ElevatedButton.styleFrom(minimumSize: const Size(233, 55)),
           onPressed: () => context.push('/policies-list'),
           child: const Text(
             'POLICIES',
@@ -60,7 +60,7 @@ class HomePage extends StatelessWidget {
           height: 21.0,
         ),
         ElevatedButton(
-          style: ElevatedButton.styleFrom(),
+          style: ElevatedButton.styleFrom(minimumSize: const Size(233, 55)),
           onPressed: () => context.push('/policy-create'),
           child: const Text('NEW POLICY'),
         ),
