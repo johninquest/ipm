@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:ipm/pages/start.dart';
-import 'package:ipm/pages/storage_options.dart';
-import 'pages/claims/claim_create.dart';
-import 'pages/claims/claims_list.dart';
+import 'pages/start.dart';
+import 'pages/storage_options.dart';
 import 'pages/policies/policies_list.dart';
 import 'pages/policies/policy_create.dart';
 import 'pages/user/user_create.dart';
@@ -37,9 +35,9 @@ class MyApp extends StatelessWidget {
         ));
   }
 
-  final GoRouter _router = GoRouter(initialLocation: '/auth', routes: [
+  final GoRouter _router = GoRouter(initialLocation: '/', routes: [
     GoRoute(
-      path: '/auth',
+      path: '/',
       builder: (context, state) => const AuthPage(),
     ),
     GoRoute(
@@ -70,14 +68,6 @@ class MyApp extends StatelessWidget {
       path: '/policy-create',
       builder: (context, state) => const CreatePolicyPage(),
     ),
-/*     GoRoute(
-      path: '/claims-list',
-      builder: (context, state) => const ClaimsListPage(),
-    ),
-    GoRoute(
-      path: '/create-claim',
-      builder: (context, state) => const ClaimCreatePage(),
-    ), */
     GoRoute(
       path: '/storage',
       builder: (context, state) => const StorageOptionsPage(),

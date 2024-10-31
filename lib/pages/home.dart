@@ -30,11 +30,6 @@ class HomePage extends StatelessWidget {
             icon: const Icon(Icons.logout_outlined),
             tooltip: 'Log out',
           )
-          /*  IconButton(
-            onPressed: () => context.push('/auth'),
-            icon: const Icon(Icons.logout_outlined),
-            tooltip: 'Log out',
-          ) */
         ],
       ),
       /* drawer: const LeftMenu(), */

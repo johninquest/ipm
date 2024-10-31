@@ -37,7 +37,7 @@ class LogoutDialog extends StatelessWidget {
                   _spHelper.removeData('currentUserData').then((_) {
                     PageRouter().navigateToPage(LoginPage(), context); */
 
-                  context.push('/auth');
+                  context.push('/');
                 },
                 child: const Text(
                   'YES',
@@ -48,6 +48,62 @@ class LogoutDialog extends StatelessWidget {
       ],
       shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(10.0))),
+    );
+  }
+}
+
+class InfoDialog extends StatelessWidget {
+  final String? title; // Optional icon title/tooltip
+  final IconData icon;
+  final double iconSize;
+  final String content;
+  final String buttonText;
+  final VoidCallback? onButtonPressed; // Optional callback for the button
+
+  const InfoDialog({
+    super.key,
+    this.title,
+    this.icon = Icons.info_outline,
+    this.iconSize = 35.0,
+    required this.content,
+    this.buttonText = 'OK',
+    this.onButtonPressed,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return AlertDialog(
+      title: Icon(
+        icon,
+        size: iconSize,
+        semanticLabel: title,
+        color: primaryColor,
+      ),
+      content: Text(
+        content,
+        textAlign: TextAlign.center,
+        style: const TextStyle(fontWeight: FontWeight.bold),
+      ),
+      actions: [
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            TextButton(
+              onPressed: onButtonPressed ?? () => Navigator.of(context).pop(),
+              child: Text(
+                buttonText,
+                style: const TextStyle(
+                    color: primaryColor,
+                    fontWeight: FontWeight.bold,
+                    letterSpacing: 1.0),
+              ),
+            ),
+          ],
+        ),
+      ],
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.all(Radius.circular(10.0)),
+      ),
     );
   }
 }
